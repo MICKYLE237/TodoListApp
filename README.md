@@ -94,21 +94,29 @@ L'application sera accessible à l'adresse suivante : http://localhost:8000.
 
 ## Backend
 
-Framework : Laravel (PHP), choisi pour sa facilité de gestion des opérations CRUD, ses fonctionnalités de sécurité (authentification, autorisations) et sa flexibilité avec Eloquent ORM.
-Base de données : MySQL, pour la gestion efficace des données relationnelles.
-Authentification : Système d'authentification Laravel, avec gestion des utilisateurs et rôles.
-Frontend
-Vue.js : Utilisé pour une interface utilisateur réactive, surtout pour les interactions complexes.
-Tailwind CSS : Framework CSS pour un design moderne, épuré et mobile-first.
-Blade Templates : Système de templating natif de Laravel, utilisé pour la gestion des vues avec un rendu rapide et intégré.
-Pagination et gestion des tâches
-Les tâches sont paginées avec paginate() pour éviter de surcharger la vue en affichant trop d'éléments à la fois.
-L'utilisateur ne peut voir que ses propres tâches, grâce à des policies Laravel qui gèrent les autorisations de modification/suppression.
-Les tâches terminées sont visuellement distinctes, avec des options pour les marquer comme terminées ou non.
-Tests
-Des tests unitaires et d'intégration peuvent être ajoutés pour valider la création, la mise à jour et la suppression des tâches.
-Sécurité
-Protection CSRF incluse nativement dans Laravel pour sécuriser les formulaires.
-Système d'autorisation via Policies pour que les utilisateurs ne puissent gérer que leurs propres tâches.
-![alt text](image.png)
-NB : The database is situated in data.sql file
+-   Framework : Laravel (PHP), choisi pour sa facilité de gestion des opérations CRUD, ses fonctionnalités de sécurité (authentification, autorisations) et sa flexibilité avec Eloquent ORM.
+-   Base de données : MySQL, pour la gestion efficace des données relationnelles.
+-   Authentification : Système d'authentification LaravelBreeze, avec gestion des utilisateurs et rôles.
+
+## Frontend
+
+-   Vue.js : Utilisé pour une interface utilisateur réactive, surtout pour les interactions complexes.
+-   Tailwind CSS : Framework CSS pour un design moderne, épuré et mobile-first.
+-   Blade Templates : Système de templating natif de Laravel, utilisé pour la gestion des vues avec un rendu rapide et intégré.
+
+## Pagination et gestion des tâches
+
+-   Les tâches sont paginées avec paginate() pour éviter de surcharger la vue en affichant trop d'éléments à la fois.
+-   L'utilisateur ne peut voir que ses propres tâches, grâce à des policies Laravel qui gèrent les autorisations de modification/suppression.
+-   Les tâches terminées sont visuellement distinctes, avec des options pour les marquer comme terminées ou non.
+
+## Tests
+
+-   Des tests unitaires et d'intégration peuvent être ajoutés pour valider la création, la mise à jour et la suppression des tâches.
+
+## Sécurité
+
+-   Protection CSRF incluse nativement dans Laravel pour sécuriser les formulaires.
+-   Système d'autorisation via Policies pour que les utilisateurs ne puissent gérer que leurs propres tâches.
+    ![alt text](image.png)
+    NB : The database is situated in data.sql file
