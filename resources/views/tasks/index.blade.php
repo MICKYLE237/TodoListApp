@@ -22,6 +22,7 @@
                     </a>
                 </div>
 
+
                 <div class="space-y-4">
                     @foreach ($tasks as $task)
                         <div class="flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-700 rounded-md {{ $task->status == 'completed' ? 'line-through' : '' }}">
