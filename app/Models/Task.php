@@ -11,6 +11,8 @@ class Task extends Model
   /** @use HasFactory<\Database\Factories\UserFactory> */
   use HasFactory, Notifiable;
 
+  const STATUS_PENDING = 'pending';
+  const STATUS_COMPLETED = 'completed';
   /**
    * The attributes that are mass assignable.
    *
@@ -20,6 +22,7 @@ class Task extends Model
       'title',
       'description',
       'statut',
+       'user_id',
   ];
 
   /**
@@ -41,5 +44,21 @@ class Task extends Model
       return [
       //
       ];
+  }
+
+
+  public function markAsCompleted()
+  {
+      $this->update(['status' => self::STATUS_COMPLETED]);
+  }
+
+  public function markAsPending()
+  {
+      $this->update(['status' => self::STATUS_PENDING]);
+  }
+
+  public function user()
+  {
+      return $this->belongsTo(User::class);
   }
 }

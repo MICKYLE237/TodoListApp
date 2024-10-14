@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class TaskController extends Controller
 {
-
+    use AuthorizesRequests;
     public function index()
     {
         //$totalTasks = auth()->user()->tasks()->count();
         //$completedTasks = auth()->user()->tasks()->where('status', 'completed')->count();
         //$pendingTasks = auth()->user()->tasks()->where('status', 'pending')->count();
-        $tasks = auth()->user()->tasks()->orderBy('created_at', 'desc')->get();
+        $tasks = auth()->user()->tasks()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('tasks.index', compact('tasks'));
     }
@@ -69,6 +70,23 @@ class TaskController extends Controller
     {
         $task->delete();
         return redirect()->route('tasks.index')->with('success', 'Tâche supprimée avec succès !');
+    }
+    public function markAsCompleted(Task $task)
+    {
+        $this->authorize('update', $task);
+
+        $task->markAsCompleted();
+
+        return redirect()->route('tasks.index')->with('success', 'Task marked as completed.');
+    }
+
+    public function markAsPending(Task $task)
+    {
+        $this->authorize('update', $task);
+
+        $task->markAsPending();
+
+        return redirect()->route('tasks.index')->with('success', 'Task marked as pending.');
     }
 }
 

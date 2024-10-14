@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
     Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
     Route::get('/tasks/stats', [TaskController::class, 'stats'])->name('tasks.stats');
+    Route::patch('tasks/{task}/completed', [TaskController::class, 'markAsCompleted'])->name('tasks.completed');
+    Route::patch('tasks/{task}/pending', [TaskController::class, 'markAsPending'])->name('tasks.pending');
 });
 
 
