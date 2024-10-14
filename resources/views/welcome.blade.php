@@ -6,7 +6,6 @@
     <title>Page d'Accueil - Todo List</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Ajout de styles personnalisés pour un meilleur design */
         .hero {
             background-image: url('https://source.unsplash.com/1600x900/?workspace,productivity');
             background-size: cover;

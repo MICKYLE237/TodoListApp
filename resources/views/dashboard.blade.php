@@ -9,7 +9,7 @@
         <a href="{{ route('tasks.index') }}" class="bg-green-600 hover:bg-green-700 text-white text-center p-4 rounded-lg shadow-md transition duration-300">
             <h3 class="text-lg font-medium">{{ __('View Tasks') }}</h3>
         </a>
-        <a href="{{ route('tasks.stats') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white text-center p-4 rounded-lg shadow-md transition duration-300">
+        <a href="{{ route('tasks.dashboard') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white text-center p-4 rounded-lg shadow-md transition duration-300">
             <h3 class="text-lg font-medium">{{ __('User Task Statistics') }}</h3>
         </a>
         <a href="{{ route('tasks.create') }}" class="bg-green-600 hover:bg-blue-700 text-white text-center p-4 rounded-lg shadow-md transition duration-300">

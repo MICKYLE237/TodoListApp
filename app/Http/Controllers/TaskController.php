@@ -19,7 +19,14 @@ class TaskController extends Controller
 
         return view('tasks.index', compact('tasks'));
     }
+    public function dashboard()
+    {
+        $totalTasks = Task::where('user_id', auth()->id())->count();
+        $completedTasks = Task::where('user_id', auth()->id())->where('status', 'completed')->count();
+        $pendingTasks = Task::where('user_id', auth()->id())->where('status', 'pending')->count();
 
+        return view('tasks.dashboard', compact('totalTasks', 'completedTasks', 'pendingTasks'));
+    }
 
     public function create()
     {
