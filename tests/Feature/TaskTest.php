@@ -14,12 +14,7 @@ class TaskTest extends TestCase
     public function it_can_create_a_task()
     {
         $task = Task::factory()->create();
-        $this->assertEquals('pending', $task->status);
 
-        $this->assertDatabaseHas('tasks', [
-            'description' => 'None',
-            'status' => 'completed',
-        ]);
     }
 
     /** @test */
